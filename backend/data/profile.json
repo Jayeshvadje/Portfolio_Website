@@ -1,0 +1,50 @@
+{
+  "personal": {
+    "name": "Jayesh",
+    "title": "AI Engineer & Automation Enthusiast",
+    "location": "India",
+    "tagline": "Passionate about building intelligent web applications, AI-driven solutions, and scalable systems.",
+    "links": {
+      "github": "https://github.com/jayeshvadje",
+      "linkedin": "https://linkedin.com/in/jayeshvadje",
+      "email": "[jayeshananda17@gmail.com]",
+      "resume_url": "/assets/docs/resume.pdf"
+    }
+  },
+  "skills": {
+    "languages": ["Python", "JavaScript", "HTML5", "CSS3", "SQL"],
+    "frameworks": ["FastAPI", "Flask", "React", "Node.js"],
+    "ai_ml": ["RAG Architecture", "LangChain", "Vector Databases", "Embeddings", "Prompt Engineering"],
+    "tools": ["Git", "GitHub", "Docker", "VS Code", "Postman"]
+  },
+  "experience": [
+    {
+      "role": "AI/ML Engineer",
+      "company": "Accenture",
+      "period": "2022 - Present",
+      "description": "Designing and developing responsive web applications, integrating AI/LLM features, and building robust backend APIs.",
+      "highlights": [
+        "Implemented RAG pipelines for domain-specific query resolution",
+        "Built responsive web user interfaces with modern UX aesthetics",
+        "Optimized database queries and backend latency"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "AI Conversational Portfolio Website",
+      "category": "Full Stack & AI",
+      "description": "An interactive chatbot-first website that acts as a live interactive portfolio. Features a RAG pipeline that answers visitor queries based on my resume, projects, and skills.",
+      "technologies": ["Python", "FastAPI", "HTML/CSS/JS", "RAG", "Embeddings"],
+      "github": "https://github.com/your-username/my_Website_project",
+      "demo": "https://your-portfolio-demo.com"
+    }
+  ],
+  "quick_prompts": [
+    "Tell me about your work experience",
+    "What are your core technical skills?",
+    "Can you showcase your best projects?",
+    "How does your RAG chatbot work?",
+    "Can I view or download your resume?"
+  ]
+}
