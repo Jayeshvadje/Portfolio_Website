@@ -38,8 +38,13 @@ app.add_middleware(
 # Initialize RAG Engine
 rag_engine = RAGEngine(data_dir=DATA_DIR)
 
+class ChatMessage(BaseModel):
+    role: str
+    content: str
+
 class ChatRequest(BaseModel):
     message: str
+    history: list[ChatMessage] = []
 
 class ChatResponse(BaseModel):
     answer: str
@@ -60,8 +65,9 @@ def chat_endpoint(request: ChatRequest):
     """Processes user queries via RAG and returns accurate context-grounded responses."""
     if not request.message.strip():
         raise HTTPException(status_code=400, detail="Query cannot be empty")
-    
-    result = rag_engine.answer_query(request.message)
+    # Convert history to dictionaries
+    history_dicts = [{"role": msg.role, "content": msg.content} for msg in request.history]
+    result = rag_engine.answer_query(request.message, history_dicts)
     return ChatResponse(
         answer=result["answer"],
         sources=result["retrieved_sources"],

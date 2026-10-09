@@ -17,6 +17,8 @@ An intelligent, interactive portfolio website featuring a **RAG-powered (Retriev
   - Built-in resume preview with one-click download access.
 - **🎨 Modern & Responsive Design**:
   - Sleek, intuitive UI optimized for both desktop and mobile devices.
+  - Interactive moving AI background powered by Particles.js.
+  - Futuristic floating AI avatar with pulsing animations.
 
 ---
 
@@ -39,14 +41,14 @@ flowchart LR
 
 ---
 
-## 💻 Tech Stack (Suggested)
+## 💻 Tech Stack
 
 | Layer | Technologies |
 | :--- | :--- |
-| **Frontend** | HTML5, CSS3, JavaScript / React / Next.js |
-| **Backend & API** | Node.js / Express or Python (FastAPI / Flask) |
-| **RAG / AI Orchestration** | LangChain / LlamaIndex, OpenAI / Gemini / Ollama |
-| **Vector Storage** | ChromaDB / FAISS / Pinecone |
+| **Frontend** | HTML5, CSS3 (Vanilla), JavaScript, Particles.js |
+| **Backend & API** | Python, FastAPI, Uvicorn |
+| **RAG / AI Orchestration** | Google Generative AI (Gemini), BM25 Retriever |
+| **Data Storage** | Local JSON & Markdown files |
 
 ---
 
@@ -97,10 +99,10 @@ To enable the full Python RAG backend and API endpoints:
 # Install dependencies
 pip install -r backend/requirements.txt
 
-# (Optional) Copy environment variables
+# (Optional) Copy environment variables and add your Gemini API Key
 cp .env.example .env
 
-# Run server
+# Run server (Automatically detects and runs FastAPI)
 python run.py
 ```
 
@@ -108,7 +110,7 @@ python run.py
 
 ## 📬 Contact & Connect
 
-- **Portfolio**: [Your Website Link](#)
-- **LinkedIn**: [Your LinkedIn Profile](#)
-- **GitHub**: [Your GitHub Profile](#)
-- **Email**: [your.email@example.com](mailto:your.email@example.com)
+- **Portfolio**: [jayeshvadje.github.io](https://jayeshvadje.github.io)
+- **LinkedIn**: [Jayesh Vadje](https://www.linkedin.com/in/jayesh-vadje-31348b1b3)
+- **GitHub**: [Jayeshvadje](https://github.com/Jayeshvadje)
+- **Email**: [jayeshananda17@gmail.com](mailto:jayeshananda17@gmail.com)

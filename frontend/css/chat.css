@@ -83,6 +83,21 @@
   margin: 0 auto;
 }
 
+/* Custom Scrollbar for Chat */
+.messages-viewport::-webkit-scrollbar {
+  width: 6px;
+}
+.messages-viewport::-webkit-scrollbar-track {
+  background: transparent;
+}
+.messages-viewport::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 10px;
+}
+.messages-viewport::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6);
+}
+
 /* Message Rows */
 .message-row {
   display: flex;
@@ -92,8 +107,15 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .message-row.user-row {
@@ -205,7 +227,8 @@
   width: 100%;
 }
 
-.project-card, .exp-card {
+.project-card,
+.exp-card {
   background: rgba(15, 23, 42, 0.6);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
@@ -213,7 +236,8 @@
   transition: transform var(--transition-fast), border-color var(--transition-fast);
 }
 
-.project-card:hover, .exp-card:hover {
+.project-card:hover,
+.exp-card:hover {
   transform: translateY(-3px);
   border-color: var(--border-focus);
 }
@@ -277,12 +301,25 @@
   animation: bounce 1.2s infinite ease-in-out;
 }
 
-.typing-dot:nth-child(2) { animation-delay: 0.2s; }
-.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
 
 @keyframes bounce {
-  0%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-6px); }
+
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-6px);
+  }
 }
 
 /* ==========================================================================
@@ -309,8 +346,8 @@
 }
 
 .input-wrapper:focus-within {
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
 }
 
 .chat-input {

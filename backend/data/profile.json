@@ -3,30 +3,64 @@
     "name": "Jayesh",
     "title": "AI Engineer & Automation Enthusiast",
     "location": "India",
-    "tagline": "Passionate about building intelligent web applications, AI-driven solutions, and scalable systems.",
+    "tagline": "Passionate about building intelligent applications, AI-driven solutions, and scalable systems.",
     "links": {
       "github": "https://github.com/jayeshvadje",
-      "linkedin": "https://linkedin.com/in/jayeshvadje",
-      "email": "[jayeshananda17@gmail.com]",
+      "linkedin": "https://www.linkedin.com/in/jayesh-vadje-31348b1b3",
+      "email": "jayeshananda17@gmail.com",
       "resume_url": "/assets/docs/resume.pdf"
     }
   },
   "skills": {
-    "languages": ["Python", "JavaScript", "HTML5", "CSS3", "SQL"],
-    "frameworks": ["FastAPI", "Flask", "React", "Node.js"],
-    "ai_ml": ["RAG Architecture", "LangChain", "Vector Databases", "Embeddings", "Prompt Engineering"],
-    "tools": ["Git", "GitHub", "Docker", "VS Code", "Postman"]
+    "languages": [
+      "Python",
+      "MySQL"
+    ],
+    "Web & Backend": [
+      "FastAPI",
+      "Streamlit",
+      "REST APIs"
+    ],
+    "AI & RAG": [
+      "Retrieval-Augmented Generation (RAG)",
+      "Agentic AI",
+      "LangGraph",
+      "CrewAI",
+      "LangChain",
+      "LlamaIndex",
+      "Vector Databases (Pinecone, ChromaDB)",
+      "LLMs (GPT-4o, Claude, Llama 3)"
+    ],
+    "tools": [
+      "Git",
+      "GitHub",
+      "Docker",
+      "VS Code",
+      "Postman",
+      "Azure",
+      "Ollama",
+      "Hugging Face"
+    ]
   },
   "experience": [
     {
       "role": "AI/ML Engineer",
       "company": "Accenture",
-      "period": "2022 - Present",
-      "description": "Designing and developing responsive web applications, integrating AI/LLM features, and building robust backend APIs.",
+      "period": "2023 - Present",
+      "description": "Architected and scaled stateful multi-agent frameworks, advanced RAG conversation engines, and local LLM microservices to automate complex operational workflows.",
       "highlights": [
         "Implemented RAG pipelines for domain-specific query resolution",
-        "Built responsive web user interfaces with modern UX aesthetics",
-        "Optimized database queries and backend latency"
+        "Built autonomous software agents utilizing dynamic function calling to securely bridge natural language processing models with relational databases."
+      ]
+    },
+    {
+      "role": "Quality Assurance Engineer",
+      "company": "Accenture",
+      "period": "2022 - 2023",
+      "description": "Planned and executed test cases to ensure software quality, system reliability, and requirement validation for enterprise applications.",
+      "highlights": [
+        "Collaborated with developers and business teams to identify defects, improve workflows, and support Agile project delivery.",
+        "Worked with SQL queries, API testing, and automation workflows to improve software stability and operational efficiency."
       ]
     }
   ],
@@ -35,16 +69,34 @@
       "title": "AI Conversational Portfolio Website",
       "category": "Full Stack & AI",
       "description": "An interactive chatbot-first website that acts as a live interactive portfolio. Features a RAG pipeline that answers visitor queries based on my resume, projects, and skills.",
-      "technologies": ["Python", "FastAPI", "HTML/CSS/JS", "RAG", "Embeddings"],
-      "github": "https://github.com/your-username/my_Website_project",
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "HTML/CSS/JS",
+        "RAG",
+        "Embeddings"
+      ],
+      "github": "https://github.com/Jayeshvadje/my_Website_project",
       "demo": "https://your-portfolio-demo.com"
+    },
+    {
+      "title": "Telecom-Support-Intelligence",
+      "category": "AI & Enterprise Automation",
+      "description": "An enterprise RAG platform built for frontline support staff to instantly query thousands of pages of unstructured internal roaming and compliance documents.",
+      "technologies": [
+        "Python",
+        "LangChain",
+        "Pinecone",
+        "Cross-Encoder Reranker"
+      ],
+      "github": "https://github.com/Jayeshvadje/Telecom-Support-Intelligence",
+      "demo": "https://your-rag-demo.com"
     }
   ],
   "quick_prompts": [
     "Tell me about your work experience",
     "What are your core technical skills?",
     "Can you showcase your best projects?",
-    "How does your RAG chatbot work?",
     "Can I view or download your resume?"
   ]
 }

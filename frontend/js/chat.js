@@ -61,22 +61,28 @@ function appendBotResponse(responseObj) {
     extraContentHTML = renderExperienceHTML(profileCache.experience);
   } else if (responseObj.type === "resume") {
     extraContentHTML = `
-      <div style="margin-top: 12px;">
-        <button class="chip" onclick="document.getElementById('btn-view-resume').click()">📄 Open Resume Preview</button>
+      <div class="resume-chat-preview" style="margin-top: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color, #333); border-radius: 10px; padding: 14px;">
+        <h4 style="margin:0 0 4px 0; color: #fff;">Jayesh Vadje</h4>
+        <p style="margin:0 0 10px 0; font-size: 0.88rem; color: var(--accent-primary, #6366f1); font-weight: 500;">AI/ML Engineer</p>
+        <hr style="border:0; border-top: 1px solid rgba(255,255,255,0.1); margin: 8px 0;">
+        <p style="margin: 6px 0; font-size: 0.85rem; line-height: 1.4;"><strong>Core Competencies:</strong> RAG Architecture, Agentic AI, LangGraph, CrewAI, Python, FastAPI, Vector DBs (Pinecone, ChromaDB), LLMs (GPT-4o, Claude)</p>
+        <p style="margin: 6px 0; font-size: 0.85rem; line-height: 1.4;"><strong>Experience Summary:</strong> AI/ML Engineer at Accenture (2023 - Present) building multi-agent RAG engines and LLM microservices; Former Quality Assurance Engineer (2022 - 2023).</p>
+        <div style="margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+          <button class="chip" onclick="if(typeof openResumeModal === 'function') openResumeModal();" style="cursor: pointer;">👁️ Open Full Resume Modal</button>
+          <a href="/assets/docs/resume.pdf" download="Jayesh_Resume.pdf" target="_blank" class="chip" style="background: var(--accent-primary, #6366f1); color: #fff; text-decoration: none; font-weight: 500;">📥 Download Full PDF Resume</a>
+        </div>
       </div>
     `;
+    setTimeout(() => {
+      if (typeof openResumeModal === 'function') openResumeModal();
+    }, 300);
   }
-
-  const sourcesTag = responseObj.sources && responseObj.sources.length > 0
-    ? `<div class="rag-sources-tag">📍 Sources Grounded: ${responseObj.sources.join(", ")}</div>`
-    : "";
 
   row.innerHTML = `
     <div class="message-avatar">AI</div>
     <div class="message-bubble bot-bubble">
-      <p>${escapeHTML(responseObj.answer).replace(/\n/g, '<br>')}</p>
+      <p>${parseMarkdown(responseObj.answer)}</p>
       ${extraContentHTML}
-      ${sourcesTag}
     </div>
   `;
 
@@ -102,12 +108,17 @@ function renderProjectsHTML(projects) {
 }
 
 function renderSkillsHTML(skills) {
+  const webBackend = skills["Web & Backend"] || skills.frameworks || [];
+  const aiRag = skills["AI & RAG"] || skills.ai_ml || [];
+  const languages = skills.languages || [];
+  const tools = skills.tools || [];
+
   return `
     <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 8px;">
-      <div><strong>Languages:</strong> ${skills.languages?.join(", ")}</div>
-      <div><strong>Frameworks:</strong> ${skills.frameworks?.join(", ")}</div>
-      <div><strong>AI & RAG:</strong> ${skills.ai_ml?.join(", ")}</div>
-      <div><strong>Tools & DevOps:</strong> ${skills.tools?.join(", ")}</div>
+      ${languages.length ? `<div><strong>Languages:</strong> ${languages.join(", ")}</div>` : ""}
+      ${webBackend.length ? `<div><strong>Web & Backend:</strong> ${webBackend.join(", ")}</div>` : ""}
+      ${aiRag.length ? `<div><strong>AI & RAG:</strong> ${aiRag.join(", ")}</div>` : ""}
+      ${tools.length ? `<div><strong>Tools & DevOps:</strong> ${tools.join(", ")}</div>` : ""}
     </div>
   `;
 }
@@ -130,7 +141,10 @@ function renderExperienceHTML(expList) {
 }
 
 function scrollToBottom() {
-  viewport.scrollTop = viewport.scrollHeight;
+  viewport.scrollTo({
+    top: viewport.scrollHeight,
+    behavior: 'smooth'
+  });
 }
 
 function escapeHTML(str) {
@@ -141,4 +155,18 @@ function escapeHTML(str) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
+}
+
+function parseMarkdown(str) {
+  if (!str) return "";
+  let text = escapeHTML(str);
+  // Bold
+  text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  // Italic
+  text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
+  // Newlines
+  text = text.replace(/\n/g, '<br>');
+  // Bullet points
+  text = text.replace(/(<br>)- /g, '$1&bull; ');
+  return text;
 }
